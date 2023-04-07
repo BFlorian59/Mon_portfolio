@@ -5,7 +5,7 @@ import {AiOutlineMail} from 'react-icons/ai'
         
 export default function Presentation() {
     return(
-        <div className='w-full h-screen text-center '>
+        <div id='presentation' className='w-full h-screen text-center '>
             <div className='max-w-[1240px] w-full h-full mx-auto p-2 auto flex justify-center items-center'>
                 <div>
                     <h1 className='py-4 text-gray-700'>

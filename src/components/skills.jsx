@@ -3,7 +3,7 @@ import Image from "next/image"
 function Skills() {
     
     return(
-        <div className="w-full md:h-screen p-2">
+        <div id="skills" className="w-full md:h-screen p-2">
         <div className="max-w-[1240px] mx-auto flex flex-col justify-center h-full">
             <h2 className="mb-[3%]">Skills</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

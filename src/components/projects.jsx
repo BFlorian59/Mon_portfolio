@@ -4,10 +4,11 @@ import imglespetitsplats from "../../public/assets/projets/lespetitsplats.png"
 import imgagentbank from "../../public/assets/projets/agentbank.png"
 import imgfisheye from "../../public/assets/projets/fisheye.png"
 import imgohmyfood from "../../public/assets/projets/ohmyfood.png"
+/* eslint-disable react/no-unescaped-entities */
 
 function Projects() {
     return(
-        <div className="w-full">
+        <div id="projects" className="w-full">
             <div className="max-w-[1240px] mx-auto py-16 px-2">
                 <h2 className="mb-[3%] text-xl tracking-widest uppercase text-[#5651e1]">Mes projets</h2>
                 <h3 className="py-4">Mes projets que j'ai réalisé.</h3>
