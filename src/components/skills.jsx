@@ -1,4 +1,5 @@
 import Image from "next/image"
+import html from "../../public/assets/skills/html.png"
 
 function Skills() {
     
@@ -11,7 +12,7 @@ function Skills() {
                     <div className="grid grid-col-2 gap-4 justify-center items-center">
                         <div className="m-auto">
                             <Image
-                                src='/../public/assets/skills/html.png'
+                                src={html}
                                 width={70}
                                 height={70}
                                 alt='/'
