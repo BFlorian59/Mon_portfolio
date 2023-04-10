@@ -10,7 +10,7 @@ function Contact() {
         <div id='contact' className="w-full lg:h-screen ">
             <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
                 <p className="text-xl tracking-widest uppercase text-[#5651e5]">Contact</p>
-                <h2 className="py-4">Get in touch</h2>
+                <h2 className="py-4">Me contacter</h2>
                 <div className=" grid lg:grid-cols-5 gap-8">
                     <div className="col-span-3 lg:col-span-2 w-full shadow-xl shadox-gray-400 rounded-xl p-4">
                         <div className="lg:p-4 h-full rounded-xl">
@@ -18,21 +18,26 @@ function Contact() {
                                 <Image className="rounded-xl hover:scale-105 ease-in duration-300" src={imgcontact} alt="/" />
                             </div>
                             <div>
-                                <h2 className='py-2'>Name here</h2>
-                                <p>Front-End Developper</p>
-                                <p className='py-4'>I am available for work</p>
+                                <h2 className='py-2'>Florian Broeks</h2>
+                                <p>Developpeur Front-End</p>
                             </div>
                             <div>
                                 <p className='uppercase pt-8'>Connect with me</p>
                                 <div className='flex itmes-center justify-between py-4'>
                                     <div className=" rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                                    <Link href='https://www.linkedin.com/in/florian-broeks-0b5540210/'>
                                         <FaLinkedinIn/>
+                                    </Link>
                                     </div>
                                     <div className=" rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                                    <Link href='https://github.com/BFlorian59'>
                                         <FaGithub/>
+                                    </Link>
                                     </div>
                                     <div className=" rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
+                                    <Link href='/#contact'>
                                         <AiOutlineMail/>
+                                    </Link>
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +46,7 @@ function Contact() {
 
                     <div className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4 '>
                         <div className='p-4'>
-                            <form>
+                            <form method='POST' encType='multipart/form-data'>
                                 <div className='grid md:cols-2 gap-4 w-full py-2'>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Nom</label>

@@ -1,10 +1,10 @@
 import Image from "next/legacy/image"
-import imgKasa from "../../public/assets/projets/p11.png"
+import imgagentbank from "../../public/assets/projets/agentbank.png"
 import {RiRadioButtonFill} from "react-icons/ri"
 import Link from "next/link"
 /* eslint-disable react/no-unescaped-entities */
 
-function Kasa() {
+function Agentbank() {
     return(
       <div className='w-full'>
         <div className='w-screen h-[50vh] relative'>
@@ -13,11 +13,11 @@ function Kasa() {
                 className='absolute z-1'
                 layout='fill'
                 objectFit='cover'
-                src={imgKasa}
+                src={imgagentbank}
                 alt='/'
             />
             <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2">
-              <h2 className="py-2">Kasa</h2>
+              <h2 className="py-2">Agent Bank</h2>
               <h3>React JS / CSS / HTML</h3>
             </div>
         </div>
@@ -51,4 +51,4 @@ function Kasa() {
     )
 }
 
-export default Kasa
+export default Agentbank

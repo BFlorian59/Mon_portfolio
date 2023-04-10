@@ -1,6 +1,7 @@
 import React from 'react'
 import {FaGithub, FaLinkedinIn} from "react-icons/fa"
 import {AiOutlineMail} from 'react-icons/ai'
+import Link from 'next/link';
 
         
 export default function Presentation() {
@@ -19,14 +20,21 @@ export default function Presentation() {
                        dautre framework en JS. jai aussi dautre connaissance dans le back-end comme le PHP ou le SQL.
                     </p>
                     <div className='flex itmes-center justify-between max-w-[360px] m-auto py-4'>
+                  
                        <div className=" rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                            <FaLinkedinIn/>
+                            <Link href='https://www.linkedin.com/in/florian-broeks-0b5540210/'>
+                                <FaLinkedinIn/>
+                            </Link>
                         </div>
                         <div className=" rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                            <FaGithub/>
+                            <Link href='https://github.com/BFlorian59'>
+                                <FaGithub/>
+                            </Link>
                         </div>
                         <div className=" rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                            <AiOutlineMail/>
+                            <Link href='/#contact'>
+                                <AiOutlineMail/>
+                            </Link>
                         </div>
                     </div>
                 </div>
