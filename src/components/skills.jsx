@@ -1,5 +1,14 @@
 import Image from "next/image"
 import html from "../../public/assets/skills/html.png"
+import css from "../../public/assets/skills/css.png"
+import reactjs from "../../public/assets/skills/react1.png"
+import wordPress from "../../public/assets/skills/wordpress1.png"
+import php from "../../public/assets/skills/php1.png"
+import sql from "../../public/assets/skills/sql5.png"
+import nextjs from "../../public/assets/skills/nextjs.png"
+import tailwindcss from "../../public/assets/skills/tailwindcss.png"
+import jest from "../../public/assets/skills/jest1.png"
+import js from "../../public/assets/skills/js1.png"
 
 function Skills() {
     
@@ -27,7 +36,7 @@ function Skills() {
                     <div className="grid grid-col-2 gap-4 justify-center items-center">
                         <div className="m-auto">
                             <Image
-                                src='/../public/assets/skills/css.png'
+                                src={css}
                                 width={50}
                                 height={50}
                                 alt='/'
@@ -42,7 +51,7 @@ function Skills() {
                     <div className="grid grid-col-2 gap-4 justify-center items-center">
                         <div className="m-auto">
                             <Image
-                                src='/../public/assets/skills/js1.png'
+                                src={js}
                                 width={65}
                                 height={65}
                                 alt='/'
@@ -57,7 +66,7 @@ function Skills() {
                     <div className="grid grid-col-2 gap-4 justify-center items-center">
                         <div className="m-auto">
                             <Image
-                                src='/../public/assets/skills/jest1.png'
+                                src={jest}
                                 width={65}
                                 height={65}
                                 alt='/'
@@ -72,7 +81,7 @@ function Skills() {
                     <div className="grid grid-col-2 gap-4 justify-center items-center">
                         <div className="m-auto">
                             <Image
-                                src='/../public/assets/skills/react1.png'
+                                src={reactjs}
                                 width={100}
                                 height={100}
                                 alt='/'
@@ -87,7 +96,7 @@ function Skills() {
                     <div className="grid grid-col-2 gap-4 justify-center items-center">
                         <div className="m-auto">
                             <Image
-                                src='/../public/assets/skills/wordpress1.png'
+                                src={wordPress}
                                 width={100}
                                 height={100}
                                 alt='/'
@@ -102,7 +111,7 @@ function Skills() {
                     <div className="grid grid-col-2 gap-4 justify-center items-center">
                         <div className="m-auto">
                             <Image
-                                src='/../public/assets/skills/php1.png'
+                                src={php}
                                 width={100}
                                 height={100}
                                 alt='/'
@@ -117,7 +126,7 @@ function Skills() {
                     <div className="grid grid-col-2 gap-4 justify-center items-center">
                         <div className="m-auto">
                             <Image
-                                src='/../public/assets/skills/sql5.png'
+                                src={sql}
                                 width={65}
                                 height={65}
                                 alt='/'
@@ -132,7 +141,7 @@ function Skills() {
                     <div className="grid grid-col-2 gap-4 justify-center items-center">
                         <div className="m-auto">
                             <Image
-                                src='/../public/assets/skills/tailwindcss.png'
+                                src={tailwindcss}
                                 width={65}
                                 height={65}
                                 alt='/'
@@ -147,7 +156,7 @@ function Skills() {
                     <div className="grid grid-col-2 gap-4 justify-center items-center">
                         <div className="m-auto">
                             <Image
-                                src='/../public/assets/skills/nextjs.png'
+                                src={nextjs}
                                 width={65}
                                 height={65}
                                 alt='/'

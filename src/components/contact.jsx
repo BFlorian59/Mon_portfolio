@@ -4,8 +4,48 @@ import {FaGithub, FaLinkedinIn} from "react-icons/fa"
 import {AiOutlineMail} from 'react-icons/ai'
 import Link from 'next/link'
 import {HiOutlineChevronDoubleUp} from 'react-icons/hi'
+import { useState } from 'react'
 
 function Contact() {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+    const [sujet, setSujet] = useState('')
+    const [num, setNum] = useState('')
+    const [submitted, setSubmitted] = useState(false)
+
+    const handleSubmit = (e) => { 
+        e.preventDefault()
+        console.log('Sending')
+      let data = {
+          name,
+          num,
+          email,
+          sujet,
+          message
+        }
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          }).then((res) => {
+            console.log('Response received')
+            if (res.status === 200) {
+              console.log('Response succeeded!')
+              setSubmitted(true)
+              setName('')
+              setNum('')
+              setEmail('')
+              setSujet('')
+              setBody('')
+            }
+          })
+      }
+
     return(
         <div id='contact' className="w-full lg:h-screen ">
             <div className="max-w-[1240px] m-auto px-2 py-16 w-full">
@@ -50,26 +90,26 @@ function Contact() {
                                 <div className='grid md:cols-2 gap-4 w-full py-2'>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Nom</label>
-                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' type="text" />
+                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setName(e.target.value)}}  type="text" />
                                     </div>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Numéro de télephone</label>
-                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' type="text" />
+                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setNum(e.target.value)}} type="text" />
                                     </div>
                                 </div>
                                 <div className='flex flex-col py-2'>
                                     <label className='uppercase text-sm py-2'>Email</label>
-                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' type="email" />
+                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setEmail(e.target.value)}} type="email" />
                                 </div>
                                 <div className='flex flex-col py-2'>
                                     <label className='uppercase text-sm py-2'>Sujet</label>
-                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' type="text" />
+                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setSujet(e.target.value)}} type="text" />
                                 </div>
                                 <div className='flex flex-col py-2'>
                                     <label className='uppercase text-sm py-2'>Message</label>
-                                    <textarea className='border-2 rounded-lg p-3 border-gray-300' rows='10'></textarea>
+                                    <textarea className='border-2 rounded-lg p-3 border-gray-300' onChange={(e)=>{setMessage(e.target.value)}} rows='10'></textarea>
                                 </div>
-                                <button className='w-full p-4 text-gray-100 mt-4'>Envoyer</button>
+                                <button className='w-full p-4 text-gray-100 mt-4' onClick={(e)=>{handleSubmit(e)}}>Envoyer</button>
                             </form>
                         </div>
                     </div>
