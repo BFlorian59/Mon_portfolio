@@ -33,18 +33,20 @@ function Contact() {
             },
             body: JSON.stringify(data)
           }).then((res) => {
-            console.log('Response received')
-            if (res.status === 200) {
+            if (res.status === 200 && name && num && email && message && sujet) {
               console.log('Response succeeded!')
+              alert('Message envoyé')
               setSubmitted(true)
               setName('')
               setNum('')
               setEmail('')
               setSujet('')
-              setBody('')
+            }else{
+                alert('Veuillez remplir tous les champs')
             }
           })
-      }
+
+        }
 
     return(
         <div id='contact' className="w-full lg:h-screen ">
@@ -90,20 +92,20 @@ function Contact() {
                                 <div className='grid md:cols-2 gap-4 w-full py-2'>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Nom</label>
-                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setName(e.target.value)}}  type="text" />
+                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setName(e.target.value)}}  type="text" required />
                                     </div>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Numéro de télephone</label>
-                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setNum(e.target.value)}} type="text" />
+                                        <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setNum(e.target.value)}} type="text" required />
                                     </div>
                                 </div>
                                 <div className='flex flex-col py-2'>
                                     <label className='uppercase text-sm py-2'>Email</label>
-                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setEmail(e.target.value)}} type="email" />
+                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setEmail(e.target.value)}} type="email" required/>
                                 </div>
                                 <div className='flex flex-col py-2'>
                                     <label className='uppercase text-sm py-2'>Sujet</label>
-                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setSujet(e.target.value)}} type="text" />
+                                    <input className='border-2 rounded-lg p-3 flex border-gray-300' onChange={(e)=>{setSujet(e.target.value)}} type="text" required/>
                                 </div>
                                 <div className='flex flex-col py-2'>
                                     <label className='uppercase text-sm py-2'>Message</label>

@@ -23,10 +23,10 @@ function Kasa() {
         </div>
         <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8">
           <div className="col-span-4">
-            <p>Projet</p>
-            <p>Aperçu</p>
+            <h2 className="py-[2%]">Projet</h2>
+            <h3 className="py-[2%]">Aperçu</h3>
             <p>
-              Ceci est mon premier projet en reactJs. C'est un projet sur une agence immobilière nommée Kasa. 
+              Ceci est mon premier projet en ReactJs. C'est un projet sur une agence immobilière nommée Kasa. 
               L'utilisateur peut naviguer sur plusieurs annonces et il peut voir les informations la concernant 
               comme la ville du lieu, des photos et des informations complémentaires.
             </p>

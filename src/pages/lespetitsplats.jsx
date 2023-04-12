@@ -23,12 +23,13 @@ function lespetitsplats() {
         </div>
         <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8">
           <div className="col-span-4">
-            <p>Projet</p>
-            <p>Aperçu</p>
+            <h2 className="py-[2%]">Projet</h2>
+            <h3 className="py-[2%]">Aperçu</h3>
             <p>
-              Ceci est mon premier projet en reactJs. C'est un projet sur une agence immobilière nommée Kasa. 
-              L'utilisateur peut naviguer sur plusieurs annonces et il peut voir les informations la concernant 
-              comme la ville du lieu, des photos et des informations complémentaires.
+              Ceci est mon projet en JavaScript avec un algorithme de recherche. C'est un projet sur un site de recettes de cuisine nommée Les Petits Plats. 
+              L'utilisateur peut naviguer sur plusieurs recettes et il peut voir les informations concernant 
+              la recette par exemple, voir les ingrédients nécessaires pour faire la recette. Il contient aussi un système de recherche de tag par 
+              ingrédients, ustensiles et appareils utilisé pour faire la recette.
             </p>
             <button></button>
           </div>
@@ -37,7 +38,7 @@ function lespetitsplats() {
               <p className="text-center font-bold pb-2">Technologie utilisée</p>
               <div className="grid grid-cols-3 md:grid-cols-1">
                 <p className="text-gray-600 py-2 flex items-center"><RiRadioButtonFill className="pr-1" />Visual Studio</p>
-                <p className="text-gray-600 py-2 flex items-center"><RiRadioButtonFill className="pr-1" />ReactJS</p>
+                <p className="text-gray-600 py-2 flex items-center"><RiRadioButtonFill className="pr-1" />JavaScript</p>
                 <p className="text-gray-600 py-2 flex items-center"><RiRadioButtonFill className="pr-1" />CSS</p>
                 <p className="text-gray-600 py-2 flex items-center"><RiRadioButtonFill className="pr-1" />Github</p>
               </div>

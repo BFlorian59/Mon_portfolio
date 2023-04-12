@@ -23,12 +23,12 @@ function Agentbank() {
         </div>
         <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8">
           <div className="col-span-4">
-            <p>Projet</p>
-            <p>Aperçu</p>
+            <h2 className="py-[2%]">Projet</h2>
+            <h3 className="py-[2%]">Aperçu</h3>
             <p>
-              Ceci est mon premier projet en reactJs. C'est un projet sur une agence immobilière nommée Kasa. 
-              L'utilisateur peut naviguer sur plusieurs annonces et il peut voir les informations la concernant 
-              comme la ville du lieu, des photos et des informations complémentaires.
+              Ceci est mon projet en ReactJs et Redux-React avec une API. C'est un projet sur une application d'une banque nommée Argent Bank. 
+              L'utilisateur peut se connecter au système et se déconnecter. L'utilisateur ne peut voir les informations relatives à son propre 
+              profil qu'après s'être connecté avec succès. L'utilisateur peut aussi modifier le profil et conserver les données dans la base de données. 
             </p>
             <button></button>
           </div>
@@ -38,6 +38,8 @@ function Agentbank() {
               <div className="grid grid-cols-3 md:grid-cols-1">
                 <p className="text-gray-600 py-2 flex items-center"><RiRadioButtonFill className="pr-1" />Visual Studio</p>
                 <p className="text-gray-600 py-2 flex items-center"><RiRadioButtonFill className="pr-1" />ReactJS</p>
+                <p className="text-gray-600 py-2 flex items-center"><RiRadioButtonFill className="pr-1" />Redux-React</p>
+                <p className="text-gray-600 py-2 flex items-center"><RiRadioButtonFill className="pr-1" />API</p>
                 <p className="text-gray-600 py-2 flex items-center"><RiRadioButtonFill className="pr-1" />CSS</p>
                 <p className="text-gray-600 py-2 flex items-center"><RiRadioButtonFill className="pr-1" />Github</p>
               </div>

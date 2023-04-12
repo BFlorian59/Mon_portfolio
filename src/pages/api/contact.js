@@ -20,11 +20,16 @@ export default function (req, res) {
     html: `<div>${req.body.message}</div><p>Sent from:
     ${req.body.email} ${req.body.num}</p>`
   }
-  transporter.sendMail(mailData, function (err, info) {
-    if(err)
-      console.log(err)
-    else
-      console.log(info)
-  })
-  res.status(200)
+
+  if (req.body.name && req.body.email && req.body.num && req.body.message && req.body.sujet) {
+    transporter.sendMail(mailData, function (err, info) {
+      if(err)
+        console.log(err)
+      else
+        console.log(info)
+    })
+  }
+  
+  console.log(req.body)
+  res.send('success')
 }
