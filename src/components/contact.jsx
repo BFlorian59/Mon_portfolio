@@ -57,7 +57,7 @@ function Contact() {
                     <div className="col-span-3 lg:col-span-2 w-full shadow-xl shadox-gray-400 rounded-xl p-4">
                         <div className="lg:p-4 h-full rounded-xl">
                             <div>
-                                <Image className="rounded-xl hover:scale-105 ease-in duration-300" src={imgcontact} alt="/" />
+                                <Image className="rounded-xl hover:scale-105 ease-in duration-300" src={imgcontact} width={500} alt="/" />
                             </div>
                             <div>
                                 <h2 className='py-2'>Florian Broeks</h2>

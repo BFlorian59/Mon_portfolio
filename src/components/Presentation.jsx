@@ -2,15 +2,16 @@ import React from 'react'
 import {FaGithub, FaLinkedinIn} from "react-icons/fa"
 import {AiOutlineMail} from 'react-icons/ai'
 import Link from 'next/link';
-
+import Presantation from '../../public/assets/Presentation.jpeg'
+import Image from 'next/image';
         
 export default function Presentation() {
     return(
-        <div id='presentation' className='w-full h-screen text-center '>
+        <div id='presentation' className=' text-center flex flex-col'>
             <div className='max-w-[1240px] w-full h-full mx-auto p-2 auto flex justify-center items-center'>
                 <div>
-                    <h1 className='py-4 text-gray-700'>
-                        Salut, je suis <span className='text-[#5651e5]'>Florian Broeks</span>
+                    <h1 className='py-4 text-gray-700 mt-20'>
+                        Salut, je suis <span className='text-[#ff3131]'>Florian Broeks</span>
                     </h1>
                     <h1 className='py-2 text-gray-700'>
                         Un Développeur Web Front-End
@@ -38,6 +39,9 @@ export default function Presentation() {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div>
+                <Image className=" m-auto hover:scale-105 ease-in duration-300 mt-20" src={Presantation} width="50%" height={450} alt='/'/>
             </div>
         </div>
     )

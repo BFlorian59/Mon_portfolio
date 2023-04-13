@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {FaGithub, FaLinkedinIn} from "react-icons/fa"
+import Logo from "../../public/assets/Logo.png"
 import {AiOutlineClose, AiOutlineMail, AiOutlineMenu} from 'react-icons/ai'
 import { useRouter } from "next/router"
 
@@ -44,7 +45,7 @@ function Navbar() {
     return(
         <div style={{backgroundColor: `${navbg}`}} className={shadow ? "fixed w-full h-20 shadow-xl z-[100]" : "fixed w-full h-20 z-[100]"}>
             <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16">
-                <Image src="" alt="/" width={50} height={20}/>
+                <Image src={Logo} alt="/" width={100} height={50}/>
                 <div>
                     <ul style={{color: `${linkColor}`}} className="hidden md:flex">
                         <Link href='/'>
@@ -72,7 +73,7 @@ function Navbar() {
                 <div>
                     <div>
                         <div className="flex w-full items-center justify-between">
-                            <Image src="" alt="/" width='87' height='35' />
+                            <Image src={Logo} alt="/" width='87' height='35' />
                             <div onClick={handleNav} className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer">
                                 <AiOutlineClose />
                             </div>

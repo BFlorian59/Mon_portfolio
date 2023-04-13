@@ -11,7 +11,7 @@ function Projects() {
         <div id="projects" className="w-full">
             <div className="max-w-[1240px] mx-auto py-16 px-2">
                 <h2 className="mb-[3%] text-xl tracking-widest uppercase text-[#5651e1]">Mes projets</h2>
-                <h3 className="py-4">Mes projets que j'ai réalisé.</h3>
+                <h3 className="py-4">Quelques projets que j'ai réalisés.</h3>
                 <div className="grid md:grid-cols-2 gap-8">
                     <ProjectsItems title='Projet Kasa' made='Fait en ReactJs' image={imgKasa} url='/kasa' />
                     <ProjectsItems title='Projet Les petits plats' made='Fait en JavaScript' image={imglespetitsplats} url='/lespetitsplats' />

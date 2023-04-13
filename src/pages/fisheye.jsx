@@ -7,7 +7,7 @@ import Link from "next/link"
 function Fisheye() {
     return(
       <div className='w-full'>
-        <div className='w-screen h-[50vh] relative'>
+        <div className='w-[100%] h-[50vh] relative'>
             <div className='absolute top-0 left-0 w-full h-[50vh] bg-black/70 z-10'/>
             <Image
                 className='absolute z-1'
@@ -43,8 +43,13 @@ function Fisheye() {
               </div>
             </div>
           </div>
-          <Link href='/#projects' >
-            <p className="underline cursor-pointer">Back</p>
+        </div>
+        <div className="flex align-middle justify-center m-auto mb-10">
+          <Link className="mr-20" href='/#projects' >
+            <button className='w-full p-4 text-gray-100 mr-10'>Back</button>
+          </Link>
+          <Link href='https://github.com/BFlorian59/P6_Front-End-Fisheye'>
+            <button className='w-full p-4 text-gray-100'>Repot du projet</button>
           </Link>
         </div>
       </div>
