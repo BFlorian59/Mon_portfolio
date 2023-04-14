@@ -52,16 +52,16 @@ function Navbar() {
                             <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
                         </Link>
                         <Link href='/#about'>
-                            <li className="ml-10 text-sm uppercase hover:border-b">About</li>
+                            <li className="ml-10 text-sm uppercase hover:border-b">A propos de moi</li>
                         </Link>
                         <Link href='/#skills'>
-                            <li className="ml-10 text-sm uppercase hover:border-b">Skills</li>
+                            <li className="ml-10 text-sm uppercase hover:border-b">Compétences</li>
                         </Link>
                         <Link href='/#projects'>
-                            <li className="ml-10 text-sm uppercase hover:border-b">Projects</li>
+                            <li className="ml-10 text-sm uppercase hover:border-b">Mes Projets</li>
                         </Link>
                         <Link href='/#contact'>
-                            <li className="ml-10 text-sm uppercase hover:border-b">Contact me</li>
+                            <li className="ml-10 text-sm uppercase hover:border-b">Contactez-moi</li>
                         </Link>
                     </ul>
                     <div onClick={handleNav} className="md:hidden">
