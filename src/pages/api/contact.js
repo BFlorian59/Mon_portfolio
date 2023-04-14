@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-export default function (req, res) {
+export default async function (req, res) {
   require('dotenv').config()
   
   let nodemailer = require('nodemailer')
@@ -11,7 +11,21 @@ export default function (req, res) {
       pass: process.env.password,
     },
     secure: true,
-  })
+  });
+
+  await new Promise((resolve, reject) => {
+    // verify connection configuration
+    transporter.verify(function (error, success) {
+        if (error) {
+            console.log(error);
+            reject(error);
+        } else {
+            console.log("Server is ready to take our messages");
+            resolve(success);
+        }
+    });
+});
+
   const mailData = {
     from: 'cmwa7853@gmail.com',
     to: 'florianbroeks59@gmail.com',
@@ -21,14 +35,23 @@ export default function (req, res) {
     ${req.body.email} ${req.body.num}</p>`
   }
 
-  if (req.body.name && req.body.email && req.body.num && req.body.message && req.body.sujet) {
-    transporter.sendMail(mailData, function (err, info) {
-      if(err)
-        console.log(err)
-      else
-        console.log(info)
-    })
-  }
+
+  await new Promise((resolve, reject) => {
+    // send mail
+    if (req.body.name && req.body.email && req.body.num && req.body.message && req.body.sujet) {
+      transporter.sendMail(mailData, (err, info) => {
+        if (err) {
+            console.error(err);
+            reject(err);
+        } else {
+            console.log(info);
+            resolve(info);
+        }
+    });
+    }
+});
+
+  
   
   console.log(req.body)
   res.send('success')
