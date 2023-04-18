@@ -4,6 +4,7 @@ import About from '@/components/about'
 import Skills from '@/components/skills'
 import Projects from '@/components/projects'
 import Contact from '@/components/contact'
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 export default function Home() {
   return (
@@ -18,7 +19,12 @@ export default function Home() {
       <About/>
       <Skills/>
       <Projects/>
-      <Contact/>
+      <Contact>
+        <HCaptcha
+          sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"
+          onVerify={(token,ekey) => handleVerificationSuccess(token, ekey)}
+        />
+      </Contact>
     </div>
   )
 }
