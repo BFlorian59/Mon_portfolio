@@ -20,13 +20,10 @@ function Contact() {
     const captcha = useRef()
 
     const handleSubmit = (e) => { 
-        if (!token) {
-            setError("You must verify the captcha")
-            return
-        }
         e.preventDefault()
+        
         console.log('Sending')
-      let data = {
+        let data = {
           name,
           num,
           email,
@@ -41,20 +38,24 @@ function Contact() {
             },
             body: JSON.stringify(data)
           }).then((res) => {
-            if (res.status === 200 && name && num && email && message && sujet) {
-              console.log('Response succeeded!')
-              alert('Message envoyé')
-              setSubmitted(true)
-              setName('')
-              setNum('')
-              setEmail('')
-              setSujet('')
+            if (!token) {
+                setError("You must verify the captcha")
             }else{
-                alert('Veuillez remplir tous les champs')
+                if (res.status === 200 && name && num && email && message && sujet) {
+                    console.log('Response succeeded!')
+                    alert('Message envoyé')
+                    setSubmitted(true)
+                    setName('')
+                    setNum('')
+                    setEmail('')
+                    setSujet('')
+                  }else{
+                      alert('Veuillez remplir tous les champs')
+                  }
             }
-          })
 
-        }
+        })   
+    }
 
     return(
         <div id='contact' className="w-full lg:h-screen ">
