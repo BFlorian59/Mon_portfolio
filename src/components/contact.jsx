@@ -38,10 +38,7 @@ function Contact() {
             },
             body: JSON.stringify(data)
           }).then((res) => {
-            if (!token) {
-                setSubmitted(false)
-                setError("You must verify the captcha")
-            }else{
+            if (token) {
                 if (res.status === 200 && name && num && email && message && sujet) {
                     console.log('Response succeeded!')
                     alert('Message envoyé')
@@ -54,7 +51,10 @@ function Contact() {
                       alert('Veuillez remplir tous les champs')
                   }
             }
-
+            if(!token){
+                setSubmitted(false)
+                setError("You must verify the captcha")
+            }
         })   
     }
 
