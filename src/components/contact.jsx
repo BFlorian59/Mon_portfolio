@@ -15,8 +15,13 @@ function Contact() {
     const [sujet, setSujet] = useState('')
     const [num, setNum] = useState('')
     const [submitted, setSubmitted] = useState(false)
+    const [error, setError] = useState("")
 
     const handleSubmit = (e) => { 
+        if (!token) {
+            setError("You must verify the captcha")
+            return
+        }
         e.preventDefault()
         console.log('Sending')
       let data = {
@@ -119,6 +124,7 @@ function Contact() {
                                     onVerify={(token,ekey) => handleVerificationSuccess(token, ekey)}
                                     // onExpire={e => setToken("")}
                                 />
+                                {error && <p>{error}</p>}
                                 </div>
                                 <button className='w-full p-4 text-gray-100 mt-4' onClick={(e)=>{handleSubmit(e)}}>Envoyer</button>
                             </form>
