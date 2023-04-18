@@ -36,6 +36,7 @@ function Contact() {
               'Accept': 'application/json, text/plain, */*',
               'Content-Type': 'application/json'
             },
+            token,
             body: JSON.stringify(data)
           }).then((res) => {
             if (token) {
@@ -56,7 +57,11 @@ function Contact() {
                 setSubmitted(false)
                 setError("You must verify the captcha")
             }
-        })   
+        }).finally(()=>{
+            captcha.current.resetCaptcha();
+            setToken("");
+            setSubmitted(false)
+        })  
     }
 
     return(

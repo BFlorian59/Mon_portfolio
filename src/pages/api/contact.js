@@ -38,7 +38,7 @@ export default async function (req, res) {
 
   await new Promise((resolve, reject) => {
     // send mail
-    if (req.body.name && req.body.email && req.body.num && req.body.message && req.body.sujet) {
+    if (req.body.name && req.body.email && req.body.num && req.body.message && req.body.sujet && req.body.token) {
       transporter.sendMail(mailData, (err, info) => {
         if (err) {
             console.error(err);
