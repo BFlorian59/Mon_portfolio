@@ -21,6 +21,10 @@ function Contact() {
 
     const handleSubmit = (e) => { 
         e.preventDefault()
+        if(!token){
+            setSubmitted(false)
+            setError("You must verify the captcha")
+        }
         
         console.log('Sending')
         let data = {
@@ -51,10 +55,6 @@ function Contact() {
                   }else{
                       alert('Veuillez remplir tous les champs')
                 }
-            }
-            if(!token){
-                setSubmitted(false)
-                setError("You must verify the captcha")
             }
         }).finally(()=>{
             captcha.current.resetCaptcha();
