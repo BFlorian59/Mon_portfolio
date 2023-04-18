@@ -39,6 +39,7 @@ function Contact() {
             body: JSON.stringify(data)
           }).then((res) => {
             if (!token) {
+                setSubmitted(false)
                 setError("You must verify the captcha")
             }else{
                 if (res.status === 200 && name && num && email && message && sujet) {
