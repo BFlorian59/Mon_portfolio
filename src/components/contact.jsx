@@ -4,7 +4,7 @@ import {FaGithub, FaLinkedinIn} from "react-icons/fa"
 import {AiOutlineMail} from 'react-icons/ai'
 import Link from 'next/link'
 import {HiOutlineChevronDoubleUp} from 'react-icons/hi'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 function Contact() {
@@ -15,7 +15,9 @@ function Contact() {
     const [sujet, setSujet] = useState('')
     const [num, setNum] = useState('')
     const [submitted, setSubmitted] = useState(false)
+    const [token, setToken] = useState("")
     const [error, setError] = useState("")
+    const captcha = useRef()
 
     const handleSubmit = (e) => { 
         if (!token) {
@@ -119,10 +121,10 @@ function Contact() {
                                 </div>
                                 <div className='flex flex-col py-2'>
                                 <HCaptcha
-                                    // ref={captcha}
+                                    ref={captcha}
                                     sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"
-                                    onVerify={(token,ekey) => handleVerificationSuccess(token, ekey)}
-                                    // onExpire={e => setToken("")}
+                                    onVerify={token => setToken(token)}
+                                    onExpire={e => setToken("")}
                                 />
                                 {error && <p>{error}</p>}
                                 </div>
