@@ -51,7 +51,6 @@ function Contact() {
                   }else{
                       alert('Veuillez remplir tous les champs')
                 }
-                console.log(token)
             }
             if(!token){
                 setSubmitted(false)
