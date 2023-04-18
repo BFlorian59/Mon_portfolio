@@ -5,6 +5,7 @@ import {AiOutlineMail} from 'react-icons/ai'
 import Link from 'next/link'
 import {HiOutlineChevronDoubleUp} from 'react-icons/hi'
 import { useState } from 'react'
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 function Contact() {
 
@@ -111,7 +112,14 @@ function Contact() {
                                     <label className='uppercase text-sm py-2'>Message</label>
                                     <textarea className='border-2 rounded-lg p-3 border-gray-300' onChange={(e)=>{setMessage(e.target.value)}} rows='10'></textarea>
                                 </div>
-                                <div class="h-captcha" data-sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"></div>
+                                <div className='flex flex-col py-2'>
+                                <HCaptcha
+                                    // ref={captcha}
+                                    sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"
+                                    onVerify={(token,ekey) => handleVerificationSuccess(token, ekey)}
+                                    // onExpire={e => setToken("")}
+                                />
+                                </div>
                                 <button className='w-full p-4 text-gray-100 mt-4' onClick={(e)=>{handleSubmit(e)}}>Envoyer</button>
                             </form>
                         </div>
