@@ -144,12 +144,15 @@ function Contact() {
                                 />
                                 {error && <p>{error}</p>} */}
                                 </div>
-                                <button className='w-full p-4 text-gray-100 mt-4' 
-                                    onClick={(e)=>{handleSubmit(e)}}
-                                    data-sitekey="6LecILMlAAAAABQFMYDFQGsWPKDa1dY5cXbS4y2W" 
-                                    data-callback="onSubmit"
-                                    data-action='submit'>
-                                    Envoyer</button>
+                                <div>
+                                    <button className='g-recaptcha w-full p-4 text-gray-100 mt-4' 
+                                        onClick={(e)=>{handleSubmit(e)}}
+                                        data-sitekey="6LecILMlAAAAABQFMYDFQGsWPKDa1dY5cXbS4y2W" 
+                                        data-callback="onSubmit"
+                                        data-action='submit'>
+                                        Envoyer
+                                    </button>
+                                </div>
                             </form>
                             <script src='https://www.google.com/recaptcha/api.js?hl=fr'></script>
                         </div>
