@@ -19,15 +19,17 @@ function Contact() {
     const [error, setError] = useState("")
     const captcha = useRef()
 
+    if(!token){
+        setSubmitted(false)
+        setError("You must verify the captcha")
+    }
+    if (token) {
+        setSubmitted(true)
+    }
+
     const handleSubmit = (e) => { 
         e.preventDefault()
-        if(!token){
-            setSubmitted(false)
-            setError("You must verify the captcha")
-        }
-        if (token) {
-            setSubmitted(true)
-        }
+
         if(submitted && token){
         console.log('Sending')
         let data = {
