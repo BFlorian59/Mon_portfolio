@@ -26,7 +26,6 @@ function Contact() {
     if (token) {
         setSubmitted(true)
     }
-
     const handleSubmit = (e) => { 
         e.preventDefault()
 
