@@ -151,7 +151,7 @@ function Contact() {
                                     data-action='submit'>
                                     Envoyer</button>
                             </form>
-                            <script src='https://www.google.com/recaptcha/api.?hl=fr'></script>
+                            <script src='https://www.google.com/recaptcha/api.js?hl=fr'></script>
                         </div>
                     </div>
                 </div>
