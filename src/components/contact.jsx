@@ -28,7 +28,7 @@ function Contact() {
         if (token) {
             setSubmitted(true)
         }
-        if(submitted){
+        if(submitted && token){
         console.log('Sending')
         let data = {
           name,
