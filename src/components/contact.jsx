@@ -144,12 +144,12 @@ function Contact() {
                                 />
                                 {error && <p>{error}</p>} */}
                                 </div>
-                                <div>
+                                <div className='g-recaptcha'>
                                     <button className='g-recaptcha w-full p-4 text-gray-100 mt-4' 
-                                        onClick={(e)=>{handleSubmit(e)}}
                                         data-sitekey="6LecILMlAAAAABQFMYDFQGsWPKDa1dY5cXbS4y2W" 
                                         data-callback="onSubmit"
-                                        data-action='submit'>
+                                        data-action='submit'
+                                        onClick={(e)=>{handleSubmit(e)}}>
                                         Envoyer
                                     </button>
                                 </div>
