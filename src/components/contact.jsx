@@ -20,8 +20,7 @@ function Contact() {
     const captcha = useRef()
 
 
-    const handleSubmit = (e) => { 
-        e.preventDefault()
+    const handleSubmit = () => { 
         if(!token){
             setSubmitted(false)
             setError("You must verify the captcha")
