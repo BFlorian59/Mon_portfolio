@@ -144,7 +144,7 @@ function Contact() {
                                 />
                                 {error && <p>{error}</p>} */}
                                 </div>
-                                    <button className='g-recaptcha w-full p-4 text-gray-100 mt-4' 
+                                    <button className='w-full p-4 text-gray-100 mt-4' 
                                         onClick={(e)=>{handleSubmit(e)}}>
                                         Envoyer
                                     </button>
