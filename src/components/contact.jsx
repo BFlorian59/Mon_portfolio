@@ -139,7 +139,7 @@ function Contact() {
                                 </div>
                                 <button className='w-full p-4 text-gray-100 mt-4' onClick={(e)=>{handleSubmit(e)}}>Envoyer</button>
                             </form>
-                            <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+                            
                         </div>
                     </div>
                 </div>
