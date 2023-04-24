@@ -25,7 +25,8 @@ function Contact() {
             setSubmitted(false)
             setError("You must verify the captcha")
         }
-        console.log(token)
+        if(token){
+       
         console.log('Sending')
         let data = {
           name,
@@ -60,6 +61,9 @@ function Contact() {
             setToken("");
             setSubmitted(false)
         })  
+        }
+        console.log(token)
+        
     }
 
     return(
