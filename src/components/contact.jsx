@@ -62,6 +62,9 @@ function Contact() {
             setSubmitted(false)
         })  
     }
+    function onSubmit(token) {
+        document.getElementById("demo-form").submit();
+      }
 
     return(
         <div id='contact' className="w-full lg:h-screen ">
@@ -127,13 +130,21 @@ function Contact() {
                                     <textarea className='border-2 rounded-lg p-3 border-gray-300' onChange={(e)=>{setMessage(e.target.value)}} rows='10'></textarea>
                                 </div>
                                 <div className='flex flex-col py-2'>
-                                <HCaptcha
+                                <div class="g-recaptcha">
+                                    <button class="g-recaptcha" 
+                                        data-sitekey="6LecILMlAAAAABQFMYDFQGsWPKDa1dY5cXbS4y2W" 
+                                        data-callback={onSubmit}
+                                        data-action='submit'>
+                                        Submit
+                                    </button>
+                                </div>
+                                {/* <HCaptcha
                                     ref={captcha}
                                     sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"
                                     onVerify={token => setToken(token)}
                                     onExpire={e => setToken("")}
                                 />
-                                {error && <p>{error}</p>}
+                                {error && <p>{error}</p>} */}
                                 </div>
                                 <button className='w-full p-4 text-gray-100 mt-4' onClick={(e)=>{handleSubmit(e)}}>Envoyer</button>
                             </form>
