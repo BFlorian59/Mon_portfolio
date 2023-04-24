@@ -21,11 +21,12 @@ function Contact() {
 
     const handleSubmit = (e) => { 
         e.preventDefault()
-        // if(!token){
-        //     setSubmitted(false)
-        //     setError("You must verify the captcha")
-        // }
-            console.log('Sending')
+        if(!token){
+            setSubmitted(false)
+            setError("You must verify the captcha")
+        }
+        
+        console.log('Sending')
         let data = {
           name,
           num,
@@ -39,9 +40,10 @@ function Contact() {
               'Accept': 'application/json, text/plain, */*',
               'Content-Type': 'application/json'
             },
+            token,
             body: JSON.stringify(data)
           }).then((res) => {
-
+            if (token) {
                 if (res.status === 200 && name && num && email && message && sujet) {
                     console.log('Response succeeded!')
                     alert('Message envoyé')
@@ -53,15 +55,12 @@ function Contact() {
                   }else{
                       alert('Veuillez remplir tous les champs')
                 }
-        })
-        // .finally(()=>{
-        //     captcha.current.resetCaptcha();
-        //     setToken("");
-        //     setSubmitted(false)
-        // })  
-        
-        
-        
+            }
+        }).finally(()=>{
+            captcha.current.resetCaptcha();
+            setToken("");
+            setSubmitted(false)
+        })  
     }
 
     return(
@@ -128,18 +127,16 @@ function Contact() {
                                     <textarea className='border-2 rounded-lg p-3 border-gray-300' onChange={(e)=>{setMessage(e.target.value)}} rows='10'></textarea>
                                 </div>
                                 <div className='flex flex-col py-2'>
-                                <div class="h-captcha" data-sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"></div>
-                                {/* <HCaptcha
+                                <HCaptcha
                                     ref={captcha}
                                     sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"
                                     onVerify={token => setToken(token)}
                                     onExpire={e => setToken("")}
                                 />
-                                {error && <p>{error}</p>} */}
+                                {error && <p>{error}</p>}
                                 </div>
                                 <button className='w-full p-4 text-gray-100 mt-4' onClick={(e)=>{handleSubmit(e)}}>Envoyer</button>
                             </form>
-                            
                         </div>
                     </div>
                 </div>
