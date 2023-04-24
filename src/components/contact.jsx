@@ -111,7 +111,7 @@ function Contact() {
 
                     <div className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4 '>
                         <div className='p-4'>
-                            <form method='POST' encType='multipart/form-data'>
+                            <form method='POST' action=''>
                                 <div className='grid md:cols-2 gap-4 w-full py-2'>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Nom</label>
