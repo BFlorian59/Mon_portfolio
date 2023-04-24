@@ -135,7 +135,7 @@ function Contact() {
                                     <textarea className='border-2 rounded-lg p-3 border-gray-300' onChange={(e)=>{setMessage(e.target.value)}} rows='10'></textarea>
                                 </div>
                                 <div className='flex flex-col py-2'>
-                                <div class="g-recaptcha" data-sitekey="6LecILMlAAAAABQFMYDFQGsWPKDa1dY5cXbS4y2W"></div>
+                                <div class="g-recaptcha" data-sitekey="6LdCWrMlAAAAAB2OLGMS6YYVNAOi-9FK7uqQGttN"></div>
                                 {/* <HCaptcha
                                     ref={captcha}
                                     sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"
