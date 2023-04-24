@@ -14,18 +14,21 @@ function Contact() {
     const [message, setMessage] = useState('')
     const [sujet, setSujet] = useState('')
     const [num, setNum] = useState('')
-    const [submitted, setSubmitted] = useState(false)
+    const [submitted, setSubmitted] = useState(true)
     const [token, setToken] = useState("")
     const [error, setError] = useState("")
     const captcha = useRef()
-    console.log(token)
 
     const handleSubmit = (e) => { 
         e.preventDefault()
         if(!token){
             setSubmitted(false)
             setError("You must verify the captcha")
-        }else{
+        }
+        if (token) {
+            setSubmitted(true)
+        }
+        if(submitted){
         console.log('Sending')
         let data = {
           name,
