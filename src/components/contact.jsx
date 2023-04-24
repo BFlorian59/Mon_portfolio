@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-sync-scripts */
 import Image from 'next/image'
 import imgcontact from '../../public/assets/contact.png'
 import {FaGithub, FaLinkedinIn} from "react-icons/fa"
@@ -21,17 +20,12 @@ function Contact() {
     const captcha = useRef()
 
     const handleSubmit = (e) => { 
-
-
-    grecaptcha.enterprise.ready(function() {
-        grecaptcha.enterprise.execute('6LftSLMlAAAAAF55zs2uFD8wSPVSL4DSog84uxm9', {action: 'login'}).then(function(token) {
-            e.preventDefault()
+        e.preventDefault()
         // if(!token){
         //     setSubmitted(false)
         //     setError("You must verify the captcha")
         // }
-        
-        console.log('Sending')
+            console.log('Sending')
         let data = {
           name,
           num,
@@ -45,7 +39,6 @@ function Contact() {
               'Accept': 'application/json, text/plain, */*',
               'Content-Type': 'application/json'
             },
-            token,
             body: JSON.stringify(data)
           }).then((res) => {
 
@@ -66,15 +59,10 @@ function Contact() {
         //     setToken("");
         //     setSubmitted(false)
         // })  
-        });
-    });
-
+        
+        
         
     }
-    function onSubmit(token) {
-        document.getElementById("demo-form").submit();
-    }
-
 
     return(
         <div id='contact' className="w-full lg:h-screen ">
@@ -116,7 +104,7 @@ function Contact() {
 
                     <div className='col-span-3 w-full h-auto shadow-xl shadow-gray-400 rounded-xl lg:p-4 '>
                         <div className='p-4'>
-                            <form method='POST' action=''>
+                            <form method='POST' encType='multipart/form-data'>
                                 <div className='grid md:cols-2 gap-4 w-full py-2'>
                                     <div className='flex flex-col'>
                                         <label className='uppercase text-sm py-2'>Nom</label>
@@ -140,7 +128,7 @@ function Contact() {
                                     <textarea className='border-2 rounded-lg p-3 border-gray-300' onChange={(e)=>{setMessage(e.target.value)}} rows='10'></textarea>
                                 </div>
                                 <div className='flex flex-col py-2'>
-                                <div class="g-recaptcha" data-sitekey="6LftSLMlAAAAAF55zs2uFD8wSPVSL4DSog84uxm9"></div>
+                                <div class="h-captcha" data-sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"></div>
                                 {/* <HCaptcha
                                     ref={captcha}
                                     sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"
@@ -149,12 +137,9 @@ function Contact() {
                                 />
                                 {error && <p>{error}</p>} */}
                                 </div>
-                                    <button className='w-full p-4 text-gray-100 mt-4' 
-                                        onClick={(e)=>{handleSubmit(e)}}>
-                                        Envoyer
-                                    </button>
+                                <button className='w-full p-4 text-gray-100 mt-4' onClick={(e)=>{handleSubmit(e)}}>Envoyer</button>
                             </form>
-                            <script src="https://www.google.com/recaptcha/api.js?render=6LftSLMlAAAAAF55zs2uFD8wSPVSL4DSog84uxm9"></script>
+                            <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
                         </div>
                     </div>
                 </div>
