@@ -21,10 +21,11 @@ function Contact() {
     const captcha = useRef()
 
     const handleSubmit = (e) => { 
-        e.preventDefault()
 
 
-
+    grecaptcha.enterprise.ready(function() {
+        grecaptcha.enterprise.execute('6LftSLMlAAAAAF55zs2uFD8wSPVSL4DSog84uxm9', {action: 'login'}).then(function(token) {
+            e.preventDefault()
         // if(!token){
         //     setSubmitted(false)
         //     setError("You must verify the captcha")
@@ -65,6 +66,10 @@ function Contact() {
         //     setToken("");
         //     setSubmitted(false)
         // })  
+        });
+    });
+
+        
     }
     function onSubmit(token) {
         document.getElementById("demo-form").submit();
@@ -135,7 +140,7 @@ function Contact() {
                                     <textarea className='border-2 rounded-lg p-3 border-gray-300' onChange={(e)=>{setMessage(e.target.value)}} rows='10'></textarea>
                                 </div>
                                 <div className='flex flex-col py-2'>
-                                <div class="g-recaptcha" data-sitekey="6LdCWrMlAAAAAB2OLGMS6YYVNAOi-9FK7uqQGttN"></div>
+                                <div class="g-recaptcha" data-sitekey="6LftSLMlAAAAAF55zs2uFD8wSPVSL4DSog84uxm9"></div>
                                 {/* <HCaptcha
                                     ref={captcha}
                                     sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"
@@ -149,7 +154,7 @@ function Contact() {
                                         Envoyer
                                     </button>
                             </form>
-                            <script src='https://www.google.com/recaptcha/api.js'></script>
+                            <script src="https://www.google.com/recaptcha/api.js?render=6LftSLMlAAAAAF55zs2uFD8wSPVSL4DSog84uxm9"></script>
                         </div>
                     </div>
                 </div>
