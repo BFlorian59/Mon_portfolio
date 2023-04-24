@@ -47,7 +47,6 @@ function Contact() {
                 if (res.status === 200 && name && num && email && message && sujet) {
                     console.log('Response succeeded!')
                     alert('Message envoyé')
-                    setSubmitted(true)
                     setName('')
                     setNum('')
                     setEmail('')
