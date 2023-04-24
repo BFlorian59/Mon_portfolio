@@ -60,9 +60,7 @@ function Contact() {
             setToken("");
             setSubmitted(false)
         })  
-        }
-        console.log(token)
-        
+        }        
     }
 
     return(
