@@ -135,7 +135,7 @@ function Contact() {
                                     <textarea className='border-2 rounded-lg p-3 border-gray-300' onChange={(e)=>{setMessage(e.target.value)}} rows='10'></textarea>
                                 </div>
                                 <div className='flex flex-col py-2'>
-                                
+                                <div class="g-recaptcha" data-sitekey="6LecILMlAAAAABQFMYDFQGsWPKDa1dY5cXbS4y2W"></div>
                                 {/* <HCaptcha
                                     ref={captcha}
                                     sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"
@@ -144,17 +144,12 @@ function Contact() {
                                 />
                                 {error && <p>{error}</p>} */}
                                 </div>
-                                <div className='g-recaptcha'>
                                     <button className='g-recaptcha w-full p-4 text-gray-100 mt-4' 
-                                        data-sitekey="6LecILMlAAAAABQFMYDFQGsWPKDa1dY5cXbS4y2W" 
-                                        data-callback="onSubmit"
-                                        data-action='submit'
                                         onClick={(e)=>{handleSubmit(e)}}>
                                         Envoyer
                                     </button>
-                                </div>
                             </form>
-                            <script src='https://www.google.com/recaptcha/api.js?hl=fr'></script>
+                            <script src='https://www.google.com/recaptcha/api.js'></script>
                         </div>
                     </div>
                 </div>
