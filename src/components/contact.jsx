@@ -18,7 +18,7 @@ function Contact() {
     const [token, setToken] = useState("")
     const [error, setError] = useState("")
     const captcha = useRef()
-
+console.log(token)
 
     const handleSubmit = () => { 
         if(!token){
