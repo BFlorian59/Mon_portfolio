@@ -4,8 +4,8 @@ import {FaGithub, FaLinkedinIn} from "react-icons/fa"
 import {AiOutlineMail} from 'react-icons/ai'
 import Link from 'next/link'
 import {HiOutlineChevronDoubleUp} from 'react-icons/hi'
-import { useRef, useState } from 'react'
-import HCaptcha from '@hcaptcha/react-hcaptcha';
+import { useState } from 'react'
+// import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 function Contact() {
 
