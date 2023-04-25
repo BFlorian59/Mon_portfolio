@@ -14,22 +14,22 @@ function Contact() {
     const [message, setMessage] = useState('')
     const [sujet, setSujet] = useState('')
     const [num, setNum] = useState('')
-    const [submitted, setSubmitted] = useState(true)
-    const [token, setToken] = useState("")
-    const [error, setError] = useState("")
-    const captcha = useRef()
+    // const [submitted, setSubmitted] = useState(true)
+    // const [token, setToken] = useState("")
+    // const [error, setError] = useState("")
+    // const captcha = useRef()
 
-    if(!token){
-        setSubmitted(false)
-        setError("You must verify the captcha")
-    }
-    if (token) {
-        setSubmitted(true)
-    }
+    // if(!token){
+    //     setSubmitted(false)
+    //     setError("You must verify the captcha")
+    // }
+    // if (token) {
+    //     setSubmitted(true)
+    //}
     const handleSubmit = (e) => { 
         e.preventDefault()
 
-        if(submitted && token){
+        
         console.log('Sending')
         let data = {
           name,
@@ -44,7 +44,6 @@ function Contact() {
               'Accept': 'application/json, text/plain, */*',
               'Content-Type': 'application/json'
             },
-            token,
             body: JSON.stringify(data)
           }).then((res) => {
             if (token) {
@@ -59,12 +58,7 @@ function Contact() {
                       alert('Veuillez remplir tous les champs')
                 }
             }
-        }).finally(()=>{
-            captcha.current.resetCaptcha();
-            setToken("");
-            setSubmitted(false)
-        })  
-        }        
+        })      
     }
 
     return(
@@ -130,7 +124,7 @@ function Contact() {
                                     <label className='uppercase text-sm py-2'>Message</label>
                                     <textarea className='border-2 rounded-lg p-3 border-gray-300' onChange={(e)=>{setMessage(e.target.value)}} rows='10'></textarea>
                                 </div>
-                                <div className='flex flex-col py-2'>
+                                {/* <div className='flex flex-col py-2'>
                                 <HCaptcha
                                     ref={captcha}
                                     sitekey="a7c48552-a7dd-472e-be71-e087d28ab5cd"
@@ -138,7 +132,7 @@ function Contact() {
                                     onExpire={e => setToken("")}
                                 />
                                 {error && <p>{error}</p>}
-                                </div>
+                                </div> */}
                                 <button className='w-full p-4 text-gray-100 mt-4' onClick={(e)=>{handleSubmit(e)}}>Envoyer</button>
                             </form>
                         </div>
