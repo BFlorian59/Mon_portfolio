@@ -48,8 +48,11 @@ function Fisheye() {
           <Link className="mr-20" href='/#projects' >
             <button className='w-full p-4 text-gray-100 mr-10'>Back</button>
           </Link>
-          <Link href='https://github.com/BFlorian59/P6_Front-End-Fisheye'>
+          <Link className="mr-20" href='https://github.com/BFlorian59/P6_Front-End-Fisheye'>
             <button className='w-full p-4 text-gray-100'>Repot du projet</button>
+          </Link>
+          <Link href='https://fisheye-one.vercel.app/'>
+            <button className='w-full p-4 text-gray-100'>Lien du projet</button>
           </Link>
         </div>
       </div>
