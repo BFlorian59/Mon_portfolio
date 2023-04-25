@@ -46,7 +46,6 @@ function Contact() {
             },
             body: JSON.stringify(data)
           }).then((res) => {
-            if (token) {
                 if (res.status === 200 && name && num && email && message && sujet) {
                     console.log('Response succeeded!')
                     alert('Message envoyé')
@@ -57,7 +56,6 @@ function Contact() {
                   }else{
                       alert('Veuillez remplir tous les champs')
                 }
-            }
         })      
     }
 
