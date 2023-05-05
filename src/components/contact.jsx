@@ -78,7 +78,7 @@ function Contact() {
                                 <p className='uppercase pt-8'>Connect with me</p>
                                 <div className='flex itmes-center justify-between py-4'>
                                     <div className=" rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-300">
-                                    <Link href='https://www.linkedin.com/in/florian-broeks-0b5540210/'>
+                                    <Link href='https://www.linkedin.com/in/fbroeks/'>
                                         <FaLinkedinIn/>
                                     </Link>
                                     </div>
